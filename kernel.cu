@@ -9,7 +9,7 @@ cudaError_t addWithCuda();
 
 __global__ void addKernel()
 {
-    printf("%d, %d", threadIdx.x, threadIdx.y);
+    printf("%d, %d \n", threadIdx.x, threadIdx.y);
 }
 
 int main()
