@@ -38,9 +38,9 @@ cudaError_t addWithCuda()
         fprintf(stderr, "cudaSetDevice failed!  Do you have a CUDA-capable GPU installed?");
         std::exit(-1);
     }
-
+    dim3 threads(12, 12);
     // Launch a kernel on the GPU with one thread for each element.
-    addKernel<<<1, 12>>>();
+    addKernel<<<1, threads>>>();
 
     // Check for any errors launching the kernel
     cudaStatus = cudaGetLastError();
